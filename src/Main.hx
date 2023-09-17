@@ -8,10 +8,11 @@ class Main extends hxd.App {
     }
 }
 
+@:uiComp("sample-view")
 class SampleView extends h2d.Flow implements h2d.domkit.Object {
     static var SRC = 
         <sample-view layout="vertical"> 
-            Hello World! 
+            <text text={"Hello World"}/>
             <bitmap src={tile} public id="mybmp"/>
         </sample-view>
 
