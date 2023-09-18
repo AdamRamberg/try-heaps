@@ -1,14 +1,28 @@
-import Fiber.VirtualNode;
+import Fiber.FlowNode;
+import Fiber.ViewNode;
 
 class Main extends hxd.App {
     override function init() {
         var fiber = new Fiber();
-        fiber.render(new VirtualNode({ 
-            style: { backgroundColor: 0x2A8240 },
+        fiber.render(new ViewNode({ 
+            style: { backgroundColor: 0x2A8240, width: 200, height: 200 },
             children: [
-                new VirtualNode({ style: { backgroundColor: 0xFFFF00 } }),
-                new VirtualNode({ style: { backgroundColor: 0x00FFFF } }),
-                new VirtualNode({ style: { backgroundColor: 0xFF00FF } }),
+                new FlowNode({ 
+                    children: [
+                        new ViewNode({ style: { backgroundColor: 0xFFFF00 } }),
+                        new ViewNode({ style: { backgroundColor: 0x00FFFF } }),
+                        new ViewNode({ style: { backgroundColor: 0xFF00FF } }),
+                        new ViewNode({ style: { backgroundColor: 0xFFFF00 } }),
+                        new ViewNode({ style: { backgroundColor: 0x00FFFF } }),
+                        new ViewNode({ style: { backgroundColor: 0xFF00FF } }),
+                        new ViewNode({ style: { backgroundColor: 0xFFFF00 } }),
+                        new ViewNode({ style: { backgroundColor: 0x00FFFF } }),
+                        new ViewNode({ style: { backgroundColor: 0xFF00FF } }),
+                        new ViewNode({ style: { backgroundColor: 0xFFFF00 } }),
+                        new ViewNode({ style: { backgroundColor: 0x00FFFF } }),
+                        new ViewNode({ style: { backgroundColor: 0xFF00FF } }),
+                    ] 
+                }),
             ]
         })
         , s2d);
