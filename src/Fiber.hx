@@ -24,7 +24,11 @@ class Fiber extends h2d.Object {
         else if (node is FlowNode) {
             var flowNode = Std.downcast(node, ViewNode);
             var flow = new h2d.Flow(parent);
+            // Just set random props for testing purposes...
             flow.horizontalAlign = FlowAlign.Middle;
+            flow.multiline = true;
+            flow.layout = FlowLayout.Horizontal;
+            flow.maxWidth = 500;
             current = flow;
         }
         renderCount++;
