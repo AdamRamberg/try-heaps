@@ -3,29 +3,26 @@ class Fiber extends h2d.Object {
         super(parent);        
     }
 
-    var graphics: h2d.Graphics = null;
 
     public function render(app: VirtualNode, scene: h2d.Scene) {
-        graphics = new h2d.Graphics(scene);
-        renderNode(app);
+        renderNode(app, scene);
     }
 
     var renderCount: Int = 0;
-    function renderNode(node: VirtualNode) {
-        graphics.beginFill(node?.props?.style?.backgroundColor ?? 0xFFFFFF);
-        graphics.drawRect(10, 10 + renderCount * 10, 100 - renderCount * 10, 100 - renderCount * 10);
-        graphics.endFill();
+    function renderNode(node: VirtualNode, parent: h2d.Object) {
+        var graphicsNode = new h2d.Graphics(parent); // TODO: Only create new graphics node if style has an animation
+        graphicsNode.beginFill(node?.props?.style?.backgroundColor ?? 0xFFFFFF);
+        graphicsNode.drawRect(10, 10 + renderCount * 10, 100 - renderCount * 10, 100 - renderCount * 10);
+        graphicsNode.endFill();
         renderCount++;
         
         if (node.props.children != null) {
             for (child in node.props.children) {
-                renderNode(child);
+                renderNode(child, graphicsNode);
             }
         }
     }
-    // override function update(dt:Float) {
-    //     super.update(dt);
-    // }
+    
 }
 
 @:structInit class Style {
