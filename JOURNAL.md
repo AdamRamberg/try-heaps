@@ -1,0 +1,7 @@
+- Install heaps: https://heaps.io/documentation/installation.html
+- Implemented Hello world: https://heaps.io/documentation/hello-world.html
+- Implemented Hello hashlink: https://heaps.io/documentation/hello-hashlink.html
+- Cloned Heaps repo and tried to run the samples: https://github.com/HeapsIO/heaps
+- Tried added domkit to this repo. Got it to work after some fiddling. See this issue: https://github.com/HeapsIO/domkit/issues/47
+- Read about Haxe: https://haxe.org/documentation/introduction/
+- Read about Heaps: https://heaps.io/documentation/home.html
